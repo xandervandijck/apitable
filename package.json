@@ -6,7 +6,7 @@
     "preinstall": "npx only-allow pnpm",
     "sc": "npm run start:core",
     "sd": "npm run start:datasheet",
-    "sd:private": "REACT_APP_DEPLOYMENT_MODELS=PRIVATE npm run  dev:datasheet",
+    "sd:private": "REACT_APP_DEPLOYMENT_MODELS=PRIVATE npm run dev:datasheet",
     "sr": "npm run start:room-server",
     "sss": "npm run start:components",
     "start:core": "nx start @apitable/core",
@@ -43,7 +43,7 @@
     "test:ut:room:cov": "nx test:ut:cov @apitable/room-server",
     "clear:cache": "rm -rf ./package/datasheet/node_modules/.cache/hard-source",
     "link:widget": "pnpm link @apitable/core && pnpm link @apitable/widget-sdk && pnpm link @apitable/components && pnpm link @apitable/icons",
-    "postinstall": "cd .. && husky install apitable/.husky",
+    "postinstall": "husky install",
     "stylelint:datasheet": "nx stylelint @apitable/datasheet",
     "lint": "NODE_OPTIONS=--max-old-space-size=8192 eslint --config .eslintrc --ext packages/*/src/**/*.{js,ts,tsx} --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif",
     "cy:open": "nx cy:open @apitable/cypress",
@@ -113,7 +113,8 @@
   "bin": "packages/room-server/dist/main.js",
   "pkg": {
     "scripts": [
-      "packages/room-server/dist/**/*.js"
+      "packages/room-server/dist/**/*.js",
+      "prepare": "husky install"
     ],
     "assets": [
       "node_modules/bull/lib/commands/**/*",
