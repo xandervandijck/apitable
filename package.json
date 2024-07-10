@@ -52,7 +52,8 @@
     "lint:check": "eslint --config .eslintrc --quiet --ext packages/*/src/**/*.{js,ts,tsx}",
     "prettier:check": "prettier --check packages/*/src/**/*.{js,ts,tsx}",
     "prettier:fix": "prettier --write packages/*/src/**/*.{js,ts,tsx} && eslint --config .eslintrc --fix --ext packages/*/src/**/*.{js,ts,tsx}",
-    "deps": "npx npm-check-updates -u && npx check-dependency-version-consistency ."
+    "deps": "npx npm-check-updates -u && npx check-dependency-version-consistency .",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "packages/*/(src|pages)/**/!(*system_config.interface|strings.interface).{ts,tsx}": "eslint --fix --no-cache"
@@ -114,7 +115,6 @@
   "pkg": {
     "scripts": [
       "packages/room-server/dist/**/*.js",
-      "prepare": "husky install"
     ],
     "assets": [
       "node_modules/bull/lib/commands/**/*",
