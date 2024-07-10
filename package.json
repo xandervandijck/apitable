@@ -63,7 +63,6 @@
   },
   "engines": {
     "node": "20.x",
-    "pnpm": "^8"
   },
   "devDependencies": {
     "@babel/core": "7.22.20",
