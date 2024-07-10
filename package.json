@@ -62,7 +62,7 @@
     "extends": "react-app"
   },
   "engines": {
-    "node": "20.x",
+    "node": "16.x",
     "pnpm": "^8"
   },
   "devDependencies": {
